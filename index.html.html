@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExpenseMate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>ExpenseMate</h1>
+
+    <div class="budget-setter">
+      <input type="number" id="budgetInput" placeholder="Set monthly budget ($)" min="0" />
+      <button id="setBudgetBtn">Set</button>
+    </div>
+    <div id="warning" class="warning"></div>
+
+    <form id="transactionForm">
+      <select id="type" required>
+        <option value="" disabled selected>Select type</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <input type="text" id="title" placeholder="Description" required />
+      <input type="text" id="category" placeholder="Category (e.g. Food)" required />
+      <input type="number" id="amount" placeholder="Amount ($)" min="0.01" step="0.01" required />
+      <input type="date" id="date" required />
+      <button type="submit">Add Transaction</button>
+    </form>
+
+    <div id="summary" class="summary"></div>
+    <div id="transactionList" class="transaction-list"></div>
+
+    <button id="exportBtn" class="export-btn">Export Report</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
